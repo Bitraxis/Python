@@ -45,6 +45,7 @@ player_one = Player(150, 150, 200, 200)
 
 player_two = Player(100, 100, 100, 100)
 
+player_three
 ## x, y = 150, 150
 ## a, b = 200, 200
 
