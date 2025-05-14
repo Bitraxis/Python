@@ -2,35 +2,15 @@ import pygame
 from sys import exit as sysexit
 from auticko import Auticko
 pygame.init()
-
-# class Auticko():
-#     def __init__(ja, obrazok, x, y, pohyb, rozmery):
-#         ja.pozicia = [x,y]
-#         ja.pohyb = pohyb
-#         ja.sprite = pygame.image.load(obrazok)
-#         ja.rozmery = rozmery
-#         
-#     def dolava(ja):
-#         if ja.pozicia[0] > 0:
-#             ja.pozicia[0] -= ja.pohyb
-#     def doprava(ja):
-#         if ja.pozicia[0] < ja.rozmery[0] - 100:
-#             ja.pozicia[0] += ja.pohyb
-#     def hore(ja):
-#         if ja.pozicia[1] > 0:
-#             ja.pozicia[1] += ja.pohyb
-#     def dole(ja):
-#         if ja.pozicia[1] < ja.rozmery[1] - 100:
-#             ja.pozicia[1] -= ja.pohyb
-            
+         
 rozmery = (800, 600)
-okno = pygame.display.set_mode((rozmery))
+okno = pygame.display.set_mode(rozmery)
 FPS = 60
 Hra = True
 
-#obr = pygame.image.load("test.png")
-#x, y, pohyb = 200, 200, 5
-auto = Auticko("auto.png", 200, 200, 5, rozmery)
+x, y, pohyb = 200,200,5
+auto = Auticko("auto.png", x, y, pohyb, rozmery)
+auto1 = Auticko("auto.png", x+5, y+5, pohyb+5, rozmery)
 
 while Hra:
     hodiny = pygame.time.Clock()
@@ -39,16 +19,25 @@ while Hra:
             pygame.quit()
             sysexit()
     klavesy = pygame.key.get_pressed()
-    if klavesy[pygame.K_LEFT] and x > 0:
+    if klavesy[pygame.K_LEFT] :
         auto.dolava()
-    if klavesy[pygame.K_RIGHT] and x < rozmery[0] - 100:
+    if klavesy[pygame.K_RIGHT] :
         auto.doprava()
-    if klavesy[pygame.K_DOWN] and y < rozmery[1] - 100:
+    if klavesy[pygame.K_DOWN] :
         auto.dole()
-    if klavesy[pygame.K_UP] and y > 0:
-        auto.hore
+    if klavesy[pygame.K_UP] :
+        auto.hore()
+    if klavesy[pygame.K_w] :
+        auto1.hore()
+    if klavesy[pygame.K_a] :
+        auto1.dolava()
+    if klavesy[pygame.K_s] :
+        auto1.dole()
+    if klavesy[pygame.K_d] :
+        auto1.doprava()
     okno.fill((0, 0, 0))
     okno.blit(auto.sprite,auto.pozicia)
+    okno.blit(auto1.sprite,auto1.pozicia)
     pygame.display.update()
     hodiny.tick(FPS)
 pygame.quit()

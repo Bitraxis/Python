@@ -14,7 +14,7 @@ class Auticko():
             ja.pozicia[0] += ja.pohyb
     def hore(ja):
         if ja.pozicia[1] > 0:
-            ja.pozicia[1] += ja.pohyb
+            ja.pozicia[1] -= ja.pohyb
     def dole(ja):
         if ja.pozicia[1] < ja.rozmery[1] - 100:
-            ja.pozicia[1] -= ja.pohyb
+            ja.pozicia[1] += ja.pohyb
