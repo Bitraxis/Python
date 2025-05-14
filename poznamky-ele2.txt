@@ -1,0 +1,27 @@
+- Autor: Dominik Nagy II.F
+- Pomocníci: Miroslav Turanskı, Samuel Èaniga, Dominik Štrbák
+
+# Striedavé napätie a prúd
+- Skratka: AC (Alternating Current)
+- Striedavı prúd je el. prúd, ktorého smer a ve¾kos sa v závislosti od èasu menia
+- Najèastejšiou formou AC je tkz. harmonickı striedavı prúd = v ktorom ma okamzita hodnota
+prúdu i napätia v èase (t, na náèrte T) podobu sinusoidy
+- Existujú ešte:
+    - Trojuholníkovı
+    - Pílovı
+    - Obdånikovı
+- Striedavı prúd sa strieda zo kladnej do zápornej (kmitá)
+- Keï sa kmitá v niakom èase sa to volá _frekvencia_
+- Hz (Hertz) = jednotka kmitoèetu , napr. keï sa za t (èas napr. 1s) zopakuje kmitanie
+povedzme 50 krát tak urèíme frekvenciu 50 hz = kvôli tomu e naše oko není moné
+vníma blikanie vo frekvencií 50hz>. (Striedanie)
+- Vynálezca: Nikola Tesla
+- Preèo stále pouívame Jednosmernı prúd? : Je vhodnejší na hromadenie energie, to 
+znamená e batérie stále sú v jednosmernom, preto nepouívame èisto striedavı prúd.
+- Striedavı prúd a napätie v jednom obvode majú rovnakú frekvenciu ale môu ma 
+rôznu fázu
+- Jednosmernı prúd sa pohybuje jednım smerom ale tok pri striedavom sa neustále mení
+- Mení sa to¾ko krát, ko¾ko krát dojde k zmene za jednotku èasu
+- Naša sie: ~230V/50Hz (Amerika ~110/60Hz)
+
+
