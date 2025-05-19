@@ -1,6 +1,7 @@
 import pygame
 from sys import exit as sysexit
-from auticko import Auticko
+from auticko import Auticko,Protivnik
+from random import randrange
 pygame.init()
 
 rozmery = (800, 600)
@@ -8,10 +9,10 @@ okno = pygame.display.set_mode(rozmery)
 FPS = 60
 Hra = True
 
-x, y, pohyb = 200,200,5
-auto = Auticko("auto.png", x, y, pohyb, rozmery)
-auto1 = Auticko("auto.png", x+5, y+5, pohyb+5, rozmery)
-
+x, y, rychlost = 200,200,5
+auto = Auticko("auto.png", x, y, rychlost, rozmery)
+auto2 = Protivnik("auto.png", x*2, y*2, rychlost+2, rozmery)
+pohyb = 0
 while Hra:
     hodiny = pygame.time.Clock()
     for event in pygame.event.get():
@@ -27,17 +28,10 @@ while Hra:
         auto.dole()
     if klavesy[pygame.K_UP] :
         auto.hore()
-    if klavesy[pygame.K_w] :
-        auto1.hore()
-    if klavesy[pygame.K_a] :
-        auto1.dolava()
-    if klavesy[pygame.K_s] :
-        auto1.dole()
-    if klavesy[pygame.K_d] :
-        auto1.doprava()
+    auto2.update()
     okno.fill((0, 0, 0))
     okno.blit(auto.sprite,auto.pozicia)
-    okno.blit(auto1.sprite,auto1.pozicia)
+    okno.blit(auto2.sprite,auto2.pozicia)
     pygame.display.update()
     hodiny.tick(FPS)
 pygame.quit()
