@@ -9,9 +9,10 @@ okno = pygame.display.set_mode(rozmery)
 FPS = 60
 Hra = True
 
-x, y, rychlost = 200,200,5
+x, y, rychlost,zmena = 200,200,5,2
 auto = Auticko("auto.png", x, y, rychlost, rozmery)
-auto2 = Protivnik("auto.png", x*2, y*2, rychlost+2, rozmery)
+auto2 = Protivnik("auto.png", x*zmena, y*zmena, rychlost+zmena, rozmery)
+
 pohyb = 0
 while Hra:
     hodiny = pygame.time.Clock()
