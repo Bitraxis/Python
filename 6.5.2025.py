@@ -2,7 +2,7 @@ import pygame
 from sys import exit as sysexit
 from auticko import Auticko
 pygame.init()
-         
+
 rozmery = (800, 600)
 okno = pygame.display.set_mode(rozmery)
 FPS = 60
