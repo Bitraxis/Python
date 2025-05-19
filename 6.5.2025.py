@@ -1,7 +1,7 @@
 import pygame
 from sys import exit as sysexit
 from auticko import Auticko,Protivnik
-from random import randrange
+
 pygame.init()
 
 rozmery = (800, 600)
