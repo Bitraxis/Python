@@ -25,9 +25,10 @@ class Auticko():
             self.pozicia[1] += self.pohyb
             self.sprite = pygame.transform.rotate(self.spriteOrig, 180)
             
-class Protivnik(Auticko):
+class Protivnik(pygame.sprite.Sprite, Auticko):
     def __init__(self, obrazok, x, y, pohyb, rozmery):
-        super().__init__(obrazok, x, y, pohyb, rozmery)
+        Auticko.__init__(self, obrazok, x, y, pohyb, rozmery)
+        pygame.sprite.Sprite.__init__(self)
         self.smeruje = 0
     def update(self):
         if randrange(10) == randrange(10):

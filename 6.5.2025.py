@@ -11,9 +11,10 @@ Hra = True
 
 x, y, rychlost,zmena = 200,200,5,2
 auto = Auticko("auto.png", x, y, rychlost, rozmery)
-auto2 = Protivnik("auto.png", x*zmena, y*zmena, rychlost+zmena, rozmery)
-
-pohyb = 0
+auta = pygame.sprite.Group()
+for i in range(5):
+    auta.add(Protivnik("auto.png", x*zmena, y*zmena, rychlost+zmena, rozmery))
+    zmena += 1
 while Hra:
     hodiny = pygame.time.Clock()
     for event in pygame.event.get():
@@ -29,10 +30,11 @@ while Hra:
         auto.dole()
     if klavesy[pygame.K_UP] :
         auto.hore()
-    auto2.update()
+    auta.update()
     okno.fill((0, 0, 0))
     okno.blit(auto.sprite,auto.pozicia)
-    okno.blit(auto2.sprite,auto2.pozicia)
+    for auto2 in auta:
+        okno.blit(auto2.sprite,auto2.pozicia)
     pygame.display.update()
     hodiny.tick(FPS)
 pygame.quit()
